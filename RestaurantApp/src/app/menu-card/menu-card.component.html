@@ -1,0 +1,139 @@
+
+
+<nav class="navbar navbar-light bg-dark text-light">
+    <div class="container container-fluid">
+        <h2>Restaurant App</h2>
+        <div class="d-flex">
+
+           <button routerLink="/restaurant" class="btn btn-secondary">Homepage</button>&nbsp;&nbsp;&nbsp;&nbsp;
+          
+          
+           <button (click)="clickAddResto()" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Menu</button> &nbsp;&nbsp;
+&nbsp;&nbsp;
+
+         
+         
+      <!-- <a routerLink="/restaurant">
+  <button class="btn btn-secondary">Homepage</button>
+</a> -->
+
+
+        </div>
+    </div>
+</nav>
+<div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="1500">
+      <img src="https://www.superprof.co.in/blog/wp-content/uploads/2018/10/image2-2.png.webp" class="d-block w-100">
+    </div>
+    <div class="carousel-item" data-bs-interval="1500">
+      <img src="https://t3.ftcdn.net/jpg/04/09/19/10/360_F_409191045_hKZVAPBdUXGuuKhbmi2DbbEktKIY33yb.jpg" class="d-block w-100">
+    </div>
+    <div class="carousel-item" data-bs-interval="1500">
+      <img src="https://static.vecteezy.com/system/resources/previews/025/118/851/non_2x/vibrant-spices-adorn-homemade-indian-curry-bowls-generated-by-ai-free-photo.jpg" class="d-block">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<!-- <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://t3.ftcdn.net/jpg/04/09/19/10/360_F_409191045_hKZVAPBdUXGuuKhbmi2DbbEktKIY33yb.jpg" class="d-block w-10" alt="1">
+    </div>
+    <div class="carousel-item">
+      <img src="https://t4.ftcdn.net/jpg/02/70/36/75/360_F_270367565_FB3Wvmm3exlB4gh5YcRsAzqTlmSK0Px5.jpg" class="d-block w-10" alt="2">
+    </div>
+    <div class="carousel-item">
+      <img src="https://t4.ftcdn.net/jpg/03/56/32/05/240_F_356320573_EbibUzaC04zmBE3wxzUutzeGuudm4Of8.jpg" class="d-block w-10" alt="3">
+    </div>
+  </div>
+</div> -->
+
+<!--Jumbotron-->
+<!-- <div class="p-5 mb-4 bg-light rounded-3" style="background-image: url('https://modernrestaurantmanagement.com/assets/media/2018/08/pexels-photo-366968-1600x655.jpeg'); background-repeat: no-repeat; background-size: cover;">
+  <div class="container-fluid py-5 text-light">
+      <h1 class="display-5 fw-bold" style="text-align: center;">Menu Card</h1>
+       
+    </div>
+</div> -->
+<!--Close Jumbotron-->
+
+
+<!-- Table Shown -->
+<table class="table mt-4">
+    <thead>
+        <tr class="table1 table-warning"> 
+            <!-- <th scope="col">Item ID</th> -->
+            
+            <th scope="col">Image</th>
+            <th scope="col">Menu Name</th>
+            <th scope="col">Price (in Rs.)</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of allInventoryData" class="table1">
+            <!-- <td>{{data.id}}</td> -->
+            <td>
+              <!-- <img [src]="'assets/images/' + data.image" alt="Image Description" width="100"> -->
+              <img [src]="data.image" alt="Image Description" width="100">
+              <!-- <img [src]="data.image" alt="Recipe Image" width="100"> Display image -->
+          </td>
+            <td>{{data.itemName}}</td>
+            <td>{{data.amount}}</td>
+            <td>
+                <button (click)="onEditResto(data)" type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button>&nbsp;&nbsp;
+                <button (click)="deleteResto(data)" class="btn"><i class="fa fa-trash-o" style="font-size:36px;color:rgb(8, 8, 8)"></i></button>
+            </td>
+        </tr>
+        
+    </tbody>
+</table> 
+
+<!-- Button trigger modal -->
+<!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Inventory Record Form</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <!--form [formGroup]="inventoryForm">
+
+              <div class="mb-3">
+                <label class="form-label">Image</label>
+                <input type="file" formControlName="image" class="form-control-file" accept="image/*"> 
+            </div>
+                <div class="mb-3">
+                  <label class="form-label">Item Name</label>
+                  <input type="text" formControlName="itemName" class="form-control" placeholder="Item Name here" id="exampleInputName" aria-describedby="emailHelp">
+                  
+                </div>
+               
+                <div class="mb-3">
+                    <label class="form-label">Price</label>
+                    <input type="number" formControlName="amount" class="form-control" placeholder="Enter price" id="exampleInputPassword1">
+                </div>
+                
+              </form-->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button *ngIf="showAdd" type="button" class="btn btn-primary" (click)="addResto()">Add Details</button>
+          <button *ngIf="showbtn" type="button" class="btn btn-primary" (click)="updateResto()">Update Details</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  

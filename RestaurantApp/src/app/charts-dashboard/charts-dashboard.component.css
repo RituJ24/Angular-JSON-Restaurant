@@ -1,0 +1,51 @@
+h2{
+    color:aliceblue;
+}
+.table1{
+    text-align: center;
+}
+.chart-border {
+  border: 14px solid rgb(50, 49, 49); /* Set the border properties as desired */
+  padding: 10px; /* Optional: Add padding to create space around the chart */
+  border-radius: 5px;
+}
+.chart-size
+{
+    margin-top: 10px;
+    margin-left:10px;
+    height: 90%;
+    width:80%;
+}
+
+/* .chart-size {
+  max-width: 100%; 
+} */
+
+.mat-card {
+  width: 100%;
+  max-width: 600px; 
+  margin: 20px auto; 
+}
+
+.chart-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.chart-card {
+  flex: 1;
+  max-width: calc(50% - 20px);
+  margin: 5px;
+}
+
+.chart-pie-card {
+  max-width: calc(33.33% - 20px); /* Adjust the width of the pie chart card */
+}
+
+.line
+{
+  margin-top: -320px;
+}

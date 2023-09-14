@@ -1,0 +1,97 @@
+<nav class="navbar navbar-light bg-dark">
+    <div class="container container-fluid">
+        <h2>Restaurant App</h2>
+        <div class="d-flex">
+          <button routerLink="/restaurant" class="btn btn-secondary">Homepage</button>&nbsp;&nbsp;&nbsp;&nbsp;
+          
+          <button (click)="clickAddResto()" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Inventory</button>
+
+          <button routerLink="/login" class="btn btn-danger mx-3">Logout</button>
+        </div>
+    </div>
+</nav>
+<!--Jumbotron-->
+<div class="p-5 mb-4 bg-light rounded-3" style="background-image: url('https://modernrestaurantmanagement.com/assets/media/2018/08/pexels-photo-366968-1600x655.jpeg'); background-repeat: no-repeat; background-size: cover;">
+  <div class="container-fluid py-5 text-light">
+      <h1 class="display-5 fw-bold" style="text-align: center;">Restaurant Inventory Management</h1>
+        <!--
+        <p class="col-md-8 fs-4">You can save records of staff using angular</p>
+        <a class="btn btn-primary btn-lg" target="_blank" type="button" href="https://www.youtube.com/watch?v=_9j2JwvsF4U&list=PLkRbQrkhCOKhSd4OvvDBhlxPYq6p_bn9p&index=2">Testycodeiz</a>
+    -->
+    </div>
+</div>
+<!--Close Jumbotron-->
+
+
+<!-- Table Shown -->
+<table class="table mt-4">
+    <thead>
+        <tr class="table1">
+            <th scope="col">Item ID</th>
+            <th scope="col">Item Name</th>
+            <th scope="col">Date</th>
+            <th scope="col">Amount (in Rs)</th>
+            <th scope="col">Quantity (in Kgs)</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of allInventoryData" class="table1">
+            <td>{{data.id}}</td>
+            <td>{{data.itemName}}</td>
+            <td>{{data.date}}</td>
+            <td>{{data.amount}}</td>
+            <td>{{data.quantity}}</td>
+            <td>
+                <button (click)="onEditResto(data)" type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button>&nbsp;&nbsp;
+                <button (click)="deleteResto(data)" class="btn btn-danger">Delete</button>
+            </td>
+        </tr>
+        
+        <tr class="table1 table-warning">
+            <td colspan="3">Total</td>
+            <td>{{totalAmount}}</td>
+            <td>{{totalQuantity}}</td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- Button trigger modal -->
+<!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Inventory Record Form</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup]="inventoryForm">
+                <div class="mb-3">
+                  <label class="form-label">Item Name</label>
+                  <input type="text" formControlName="itemName" class="form-control" placeholder="Item Name here" id="exampleInputName" aria-describedby="emailHelp">
+                  
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Date</label>
+                  <input type="date" formControlName="date" class="form-control" placeholder="Date" id="exampleInputEmail">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Amount (in RS)</label>
+                    <input type="number" formControlName="amount" class="form-control" placeholder="Enter Amount" id="exampleInputPassword1">
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Quantity (in kgs)</label>
+                  <input type="number" formControlName="quantity" class="form-control" placeholder="Enter Quantity" id="exampleInputPassword1">
+              </div>
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button *ngIf="showAdd" type="button" class="btn btn-primary" (click)="addResto()">Add Details</button>
+          <button *ngIf="showbtn" type="button" class="btn btn-primary" (click)="updateResto()">Update Details</button>
+        </div>
+      </div>
+    </div>
+  </div>

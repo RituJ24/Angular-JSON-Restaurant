@@ -1,0 +1,53 @@
+<!--navbar starts-->
+<nav class="navbar navbar-light bg-dark">
+  <div class="container container-fluid">
+    <h2>Restaurant App</h2>
+    <div class="d-flex">
+      <button routerLink="/restaurant" class="btn btn-secondary">
+        Homepage
+      </button>
+      <button routerLink="/login" class="btn btn-danger mx-3">Logout</button>
+    </div>
+  </div>
+</nav>
+<!--navbar ends-->
+
+<!--for bar chart: SALARY-->
+<div class="chart-container">
+  <mat-card class="chart-card">
+    <!-- for bar chart: SALARY -->
+    <mat-card-header>
+      <!-- <mat-card-title>Salary</mat-card-title> -->
+    </mat-card-header>
+    <mat-card-content>
+      <div class="chart-border">
+        <canvas id="MyChart"  width="600" height="400"></canvas>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <!--for pie chart: INVENTORY-->
+  <mat-card class="chart-card">
+    <!-- for bar chart: INVENTORY -->
+    <mat-card-header>
+      <!-- <mat-card-title>Pie Chart - Inventory</mat-card-title> -->
+    </mat-card-header>
+    <mat-card-content>
+      <div class="chart-border">
+        <canvas id="PieChart" width="400" height="400"></canvas>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- for line chart: DATE vs AMOUNT -->
+  <mat-card class="chart-card line" >
+    <mat-card-header>
+      <!-- <mat-card-title>Line Chart - Date vs Amount</mat-card-title> -->
+    </mat-card-header>
+    <mat-card-content>
+      <div class="chart-border">
+        <canvas id="LineChart" width="600" height="400"></canvas>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

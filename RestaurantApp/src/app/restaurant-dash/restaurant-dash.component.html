@@ -1,0 +1,144 @@
+<nav class="navbar navbar-light bg-dark">
+  <div class="container container-fluid">
+    <h2>Restaurant App</h2>
+    <div class="d-flex">
+      <button
+        (click)="clickAddResto()"
+        type="button"
+        class="btn btn-success"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal"
+      >
+        Add Staff Member
+      </button>
+      &nbsp;&nbsp;&nbsp;&nbsp;
+
+      <button routerLink="/inventory" class="btn btn-secondary">
+        Inventory</button
+      >&nbsp;&nbsp;&nbsp;&nbsp;
+
+      
+      <button routerLink="/menu" class="btn btn-primary">Menu</button>
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      
+
+      <button routerLink="/chart-dashboard" class="btn btn-warning">
+        Graphs</button>
+      
+
+      
+      <button routerLink="/login" class="btn btn-danger mx-3">Logout</button>
+    </div>
+  </div>
+</nav>
+
+<!--jumbrotron-->
+<div
+  class="p-5 mb-4 bg-light rounded-3"
+  style="
+    background-image: url('https://img.freepik.com/free-vector/professional-cooking-horizontal-illustration_1284-72836.jpg?w=2000');
+    background-repeat: no-repeat;
+    background-size: cover;
+  "
+>
+  <h1 class="display-5 fw-bold" style="text-align: center">
+    Restaurant Staff Management
+  </h1>
+  <div class="container-fluid py-5 text-dark"></div>
+</div>
+
+<div class="p-0 mb-4 bg-light rounded-3">
+  <div class="container-fluid py-5">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a
+      class="btn btn-primary btn-lg"
+      target="_blank"
+      href="https://www.google.co.in/maps/place/Hotel+Randha+and+Lodging/@19.5393204,73.7991581,17z/data=!3m1!4b1!4m6!3m5!1s0x3bdd75af9ce8fe87:0x4d3bc38d9214c611!8m2!3d19.5393204!4d73.801733!16s%2Fg%2F11s5sd1jh0?entry=ttu"
+      type="button"
+      >About Us (GMaps)</a
+    >
+
+    <button routerLink="/knowmore" class="btn btn-warning mx-3 btn-lg">
+      Know More
+    </button>
+  </div>
+</div>
+<!--Close Jumbotron-->
+
+<!-- Table Shown -->
+<table class="table mt-4">
+    <thead>
+        <tr class="table1">
+            <th scope="col">Restaurant ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Mobile</th>
+            <th scope="col">Address</th>
+            <th scope="col">Service</th>
+            <th scope= "col">Salary</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of allRestaurantData" class="table1">
+            <td>{{data.id}}</td>
+            <td>{{data.name}}</td>
+            <td>{{data.email}}</td>
+            <td>{{data.mobile}}</td>
+            <td>{{data.address}}</td>
+            <td>{{data.services}}</td>
+            <td>{{data.salary}}</td>
+            <td>
+                <button (click)="onEditResto(data)" type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button>&nbsp;&nbsp;
+                <button (click)="deleteResto(data)" class="btn btn-danger">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- Button trigger modal -->
+<!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Staff Record Form</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup]="formValue">
+                <div class="mb-3">
+                  <label class="form-label">Name</label>
+                  <input type="text" formControlName="name" class="form-control" placeholder="Staff Name here" id="exampleInputName" aria-describedby="emailHelp">
+                  
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Email Id</label>
+                  <input type="email" formControlName="email" class="form-control" placeholder="Staff email Id" id="exampleInputEmail">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Mobile</label>
+                    <input type="text" formControlName="mobile" class="form-control" placeholder="Staff Mobile Number" id="exampleInputPassword1">
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Address</label>
+                    <input type="text" formControlName="address" class="form-control" placeholder="Staff Address" id="exampleInputPassword1">
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Services</label>
+                    <input type="text" formControlName="services" class="form-control" placeholder="Services like cleaning, cooking" id="exampleInputPassword1">
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Salary</label>
+                    <input type="text" formControlName="salary" class="form-control" placeholder="Salary" id="exampleInputPassword1">
+                  </div>
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button *ngIf="showAdd" type="button" class="btn btn-primary" (click)="addResto()">Add Details</button>
+          <button *ngIf="showbtn" type="button" class="btn btn-primary" (click)="updateResto()">Update Details</button>
+        </div>
+      </div>
+    </div>
+  </div>

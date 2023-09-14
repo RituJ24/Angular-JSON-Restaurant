@@ -1,0 +1,191 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "name": "harshal",
+      "email": "harshal@gmail.com",
+      "mobile": "9879879879",
+      "address": "Mumbai",
+      "services": "Cleaning",
+      "salary": "8000"
+    },
+    {
+      "id": 2,
+      "name": "Rajendra",
+      "email": "rajendra@gmail.com",
+      "mobile": "9876545678",
+      "address": "UP",
+      "services": "Cleaning",
+      "salary": "6000"
+    },
+    {
+      "id": 3,
+      "name": "Rahul",
+      "email": "rahul@gmail.com",
+      "mobile": "9878767898",
+      "address": "Nashik",
+      "services": "Cooking",
+      "salary": "18000"
+    },
+    {
+      "id": 4,
+      "name": "het",
+      "email": "het@gmail.com",
+      "mobile": "1234567899",
+      "address": "Kolkata",
+      "services": "Cooking",
+      "salary": "24000"
+    },
+    {
+      "id": 5,
+      "name": "akansha",
+      "email": "akansha@gmail.com",
+      "mobile": "8877665544",
+      "address": "Banglore",
+      "services": "Cashier",
+      "salary": "14000"
+    },
+    {
+      "id": 6,
+      "name": "saye",
+      "email": "saye@gmail.com",
+      "mobile": "1122334455",
+      "address": "Chennai",
+      "services": "Watchmen",
+      "salary": "10000"
+    },
+    {
+      "id": 7,
+      "name": "rishi",
+      "email": "rishi@gmail.com",
+      "mobile": "8877995544",
+      "address": "Karnataka",
+      "services": "Waiter",
+      "salary": "1000"
+    }
+  ],
+  "inventory": [
+    {
+      "id": 1,
+      "itemName": "Onions",
+      "date": "2023-08-03",
+      "amount": 25,
+      "quantity": 5
+    },
+    {
+      "id": 2,
+      "itemName": "Cabbage",
+      "date": "2023-08-05",
+      "amount": 60,
+      "quantity": 2
+    },
+    {
+      "id": 3,
+      "itemName": "Tomato",
+      "date": "2023-08-06",
+      "amount": 80,
+      "quantity": 1
+    },
+    {
+      "id": 4,
+      "itemName": "paneer",
+      "date": "2023-08-27",
+      "amount": 75,
+      "quantity": 2
+    },
+    {
+      "id": 5,
+      "itemName": "carrots",
+      "date": "2023-09-09",
+      "amount": 340,
+      "quantity": 5
+    },
+    {
+      "id": 6,
+      "itemName": "beans",
+      "date": "2023-09-08",
+      "amount": 240,
+      "quantity": 4
+    },
+    {
+      "id": 7,
+      "itemName": "palak",
+      "date": "2023-09-11",
+      "amount": 50,
+      "quantity": 2
+    }
+  ],
+  "menu": [
+    {
+      "id": 1,
+      "itemName": "Masala Dosa",
+      "image": "https://deih43ym53wif.cloudfront.net/masala-dosa-shutterstock_785766178_c75e543a17.jpeg",
+      "amount": 70
+    },
+    {
+      "id": 2,
+      "itemName": "panipuri",
+      "image": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/201708/dish-story_647_081417052301.jpg?VersionId=VSzUwnMrbhD64jwKU7p.e6KBcJaW9CvU",
+      "amount": 30
+    },
+    {
+      "id": 3,
+      "itemName": "Dhokla",
+      "image": "https://spoonuniversity.com/wp-content/uploads/sites/214/2016/03/khaman-dhokla-1024x683.jpg",
+      "amount": 50
+    },
+    {
+      "id": 4,
+      "itemName": "Thalipeeth",
+      "image": "https://esperienza.in/wp-content/uploads/2020/07/thalipeeth.jpg",
+      "amount": 35
+    },
+    {
+      "id": 5,
+      "itemName": "Vadapav plate",
+      "image": "https://www.lacademie.com/wp-content/uploads/2022/03/vada-paav.jpg",
+      "amount": 30
+    }
+  ],
+  "signup": [
+    {
+      "name": "tanisha",
+      "email": "tanisha@gmail.com",
+      "mobile": "9167372020",
+      "password": "tanisha",
+      "id": 1
+    },
+    {
+      "name": "vishal",
+      "email": "vishal@gmail.com",
+      "mobile": "1234567899",
+      "password": "vishal",
+      "id": 2
+    },
+    {
+      "name": "ritu",
+      "email": "ritu@gmail.com",
+      "mobile": 9876543211,
+      "password": "ritu",
+      "id": 3
+    },
+    {
+      "name": "test",
+      "email": "test@gmail.com",
+      "mobile": 123456789,
+      "password": "test",
+      "id": 4
+    },
+    {
+      "name": "madao",
+      "email": "madao@gmail.com",
+      "mobile": 1234556788,
+      "password": "madao",
+      "id": 5
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}

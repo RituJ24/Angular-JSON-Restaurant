@@ -1,0 +1,17 @@
+.card {
+  margin-top: -25px;
+  border: 1px solid black;
+  width: 550px;
+  padding: 45px;
+  position: absolute;
+  top: 10%;
+  left: 30%;
+}
+
+.btn {
+  margin-left: 40%;
+}
+
+.text {
+  margin-left: 25%;
+}
